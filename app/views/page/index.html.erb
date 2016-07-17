@@ -1,0 +1,19 @@
+<div class="jumbotron">
+<div class="container">
+  <% if current_user %>
+  <div class="page-header"><h1 align="center">Handover</h1></div>
+  <h2 align="center"> An automatic support request escalation system</h2>
+  <%= render partial: 'shared/file', locals: {current: "none"} %>
+<% else %>
+<h1 align="center">Handover</h1>
+<p align="center">An Automatic Support Request Escalation System</p>
+<p align="center"><%= link_to sign_in_path, class: 'btn btn-primary btn-lg' do %>
+     &laquo; Sign In 
+    <% end %>
+    <%= link_to new_user_path, class: 'btn btn-primary btn-lg' do %>
+      Sign Up &raquo;
+    <% end %>
+  </p>
+ <% end %>
+</div>
+</div>

@@ -1,0 +1,22 @@
+<div class="jumbotron">
+<div class="container">
+  <% if current_user %>
+  <div class="page-header"><h1 align="center">Handover</h1></div>
+  <h2 align="center"> An automatic support escalation system</h2>
+  <%= render 'shared/file' %>
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+<h3>SETTINGS</h3>
+<br />
+<p>REST URL:</p>
+<br />
+<p>Number of Requests Classified</p>
+
+<% end %>
+</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="jumbotron">
+<div class="container">
+  <% if current_user %>
+  <div class="page-header"><h1 align="center">Handover</h1></div>
+  <h2 align="center"> An automatic support escalation system</h2>
+  <%= render partial: 'shared/file', locals: {current: "submit"} %>
+<% if !@upload.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @upload.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
+
+<div class = "well">
+   <%= form_for @upload, html: { multipart: true } do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :attachment %>
+      <%= f.file_field :attachment %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>
+</div>
+<% end %>
+</div>
+</div>

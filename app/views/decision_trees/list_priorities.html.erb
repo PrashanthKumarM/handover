@@ -1,0 +1,35 @@
+<div class="jumbotron">
+<div class="container">
+  <% if current_user %>
+  <div class="page-header"><h1 align="center">Handover</h1></div>
+  <h2 align="center"> An automatic support escalation system</h2>
+  <%= render partial: 'shared/file', locals: {current: "trees"} %>
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+<br />
+<table class = "table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>Customer Name</th>
+         <th>Customer Priority</th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @prio.each do |key, value| %>
+         
+         <tr>
+            <td><%= key %></td>
+            <td><%= value %></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
+<% end %>
+</div>
+</div>

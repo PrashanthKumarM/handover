@@ -1,0 +1,11 @@
+<ul class="nav nav-tabs">  
+  <li role="presentation" class="<%= current == "submit" ? "active" : "" %>"><%= link_to 'Submit New Data',uploads_path %>
+    </li>
+    <li role="presentation" class="<%= current == "trees" ? "active" : "" %>"><%= link_to decision_trees_path do %>View Decision Trees
+    <% end %></li>
+    <li role="presentation" class="<%= current == "user" ? "active" : "" %>"><%= link_to edit_user_path(current_user) do %> User Profile
+    <% end %></li>
+</ul>
+
+
+  

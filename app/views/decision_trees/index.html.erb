@@ -1,0 +1,39 @@
+<div class="jumbotron">
+<div class="container">
+  <% if current_user %>
+  <div class="page-header"><h1 align="center">Handover</h1></div>
+  <h2 align="center"> An automatic support escalation system</h2>
+  <%= render partial: 'shared/file', locals: {current: "trees"} %>
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+<br />
+<table class = "table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>Tree</th>
+         <th>Customer Priorities</th>
+         <th>Dataset</th>
+         <th>URL</th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @trees.each do |tree| %>
+         
+         <tr>
+            <td><%= tree.tree %></td>
+            <td><%= link_to "View", list_priorities_decision_tree_path(tree.id) %></td>
+            <td><%= link_to "Download Data", tree.upload.attachment_url %></td>
+            <td>http://localhost:3000/escalate/<%= tree.append_url %></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
+<% end %>
+</div>
+</div>
