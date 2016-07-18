@@ -28,4 +28,4 @@ The decision trees will also have an URL associated with it which can be used fo
 The customer priority is calculated at the time of the decision tree construction. This is stored in a dataset and is readily available for the customer.
 Handover then uses this decision tree along with the test data and predicts a escalation level which is sent as response. This response is fetched by the user’s customer support application and the appropriate escalation level is set.
 
-A demo can be seen live at https://morning-waters-93736.herokuapp.com/
+A demo can be seen live at https://morning-waters-93736.herokuapp.com/ (Due to lack of credits the background job of creating a tree will not run. But you can get a general look and feel of the software here. One can definitely pull it and run locally for complete results)
